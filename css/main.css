@@ -1,0 +1,446 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    --primary-100: #0d4a6e;
+    --primary-200: #12699c;
+    --primary-300: #1887c9;
+    --accent-100: #3a7294;
+    --accent-200: #3a7294;
+    --accent-300: #3a7294;
+    --background-100: #021017;
+    --background-200: #04202e;
+    --background-300: #063146;
+    --text-100: #fcfcfd;
+    --text-200: #ededf3;
+    --text-300: #dddde9;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fcfcfd;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+input,
+button,
+textarea {
+    border: none;
+    outline: none;
+}
+
+p {
+    line-height: 130%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*=============== END BASE ===============*/
+
+
+
+
+/*=============== HEADER & NAV ===============*/
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.nav__logo {
+    color: var(--background-100);
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+}
+
+.nav__logo:hover {
+    color: var(--accent-100);
+}
+
+.btn__open {
+    padding: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav__logo,
+.btn__open {
+    z-index: 100;
+}
+
+.nav__list {
+    position: absolute;
+    inset: 0;
+    /* width: 80%;
+    height: 100%; */
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+    background-color: rgb(255, 255, 255);
+    transform: translate(-100%);
+    transition: all 0.4s ease;
+}
+
+.nav__link {
+    display: inline-block;
+    padding: 0.8rem 0.5rem;
+    color: var(--background-100);
+    font-weight: 700;
+    transition: all 0.4s ease;
+}
+
+.nav__link:hover {
+    color: var(--accent-100);
+}
+
+.nav__link-cta {
+    border: 1px solid var(--background-200);
+    border-radius: 10px;
+    padding: 0.8rem 1.8rem;
+}
+
+/* Show menu */
+.show__menu {
+    transform: translate(0);
+}
+
+/*=============== END HEADER & NAV ===============*/
+
+
+
+
+/*=============== HERO ===============*/
+.hero__main {
+    padding: 1.5rem 0 2rem 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.hero__title {
+    font-size: clamp(2rem, 4vw + 1rem, 2.8rem);
+    font-weight: 700;
+}
+
+.hero__figure {
+    width: min(100%, 380px);
+    justify-self: center;
+}
+
+.hero__paragraph {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.hero__cta {
+    background-color: var(--background-200);
+    color: white;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+/*=============== END HERO ===============*/
+
+
+
+
+/*=============== SERVICES ===============*/
+.services {
+    padding: 3rem 0;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.title__highlight {
+    padding: 6px;
+    border-radius: 6px;
+    display: inline-block;
+    background-color: var(--accent-100);
+    color: var(--text-100);
+}
+
+.paragraph {
+    margin-top: 1.5rem;
+    line-height: 1.5;
+}
+
+.services__container {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax((300px, 100%), 1fr));
+    gap: 2rem;
+}
+
+
+.services__article {
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border: 1px solid var(--background-100);
+    border-bottom-width: 3px;
+    border-radius: 1.5rem;
+}
+
+.services__article-gray {
+    background-color: #eeeeee;
+}
+
+.services__article-300 {
+    background-color: var(--background-300);
+}
+
+.services__article-100 {
+    background-color: var(--background-100);
+}
+
+.services__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    background-color: var(--primary-300);
+    border-radius: 0.5rem;
+
+    padding: 0.5rem 1.5rem;
+    color: var(--text-100);
+}
+
+.service__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.services__img {
+    width: 50%;
+    max-width: 180px;
+}
+
+/*=============== END SERVICES ===============*/
+
+
+/*=============== CTA ===============*/
+.cta {
+    margin: 5rem 0;
+    background-color: var(--primary-100);
+    color: var(--text-100);
+    border-radius: 1rem;
+    padding: 3rem 1rem;
+}
+
+.cta__content {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--text-100);
+}
+
+.cta__texts {
+    display: grid;
+    gap: 1rem;
+}
+
+.cta__paragraph {
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+.cta__link {
+    background-color: var(--text-200);
+    color: var(--background-300);
+    padding: 1.3rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+
+}
+
+.cta__figure {
+    display: none;
+}
+.cta__img{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*=============== END CTA ===============*/
+
+/*=============== FAQ ===============*/
+.faq__container{
+    margin: 1rem 0;
+}
+.faq__list{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.faq__title {
+    background-color: var(--primary-200);
+    padding: 0.5rem;
+    color: var(--text-100);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.btn__faq {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq__content {
+    display: none;
+    transition: all 0.4 ease-in-out;
+    padding: 1rem 0.5rem;
+    border: 1px solid black;
+    transition: all 0.4s ease-in-out;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.show__faq {
+    display: block;  
+}
+
+/*=============== END FAQ ===============*/
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
+/*=============== END BREAKPOINTS ===============*/
+/* mayor a 768px */
+@media (min-width: 768px) {
+
+    /*=============== HERO ===============*/
+    .hero__main {
+        padding: 5rem 0;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        grid-auto-columns: 50% 45%;
+        grid-template-areas:
+            "titulo img"
+            "parrafo img"
+            "link img";
+    }
+
+    .hero__title {
+        grid-area: titulo;
+
+    }
+
+    .hero__paragraph {
+        grid-area: parrafo;
+
+    }
+
+    .hero__cta {
+        grid-area: link;
+        padding: 1rem 2rem;
+        place-self: start;
+    }
+
+    .hero__figure {
+        grid-area: img;
+    }
+
+    /*=============== END HERO ===============*/
+
+
+
+    /*=============== SERVICES ===============*/
+
+    .services__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /*=============== END SERVICES ===============*/
+
+
+    /*=============== CTA ===============*/
+    .cta{
+        padding: 0;
+    }
+    .cta__content {
+        grid-template-columns: 45% 45%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cta__figure {
+        display: block;
+    }
+
+    .cta__link {
+        display: inline-block;
+        padding: 1.3rem 2rem;
+        place-self: start;
+    }
+
+    /*=============== END CTA ===============*/
+
+}
+
+/* mayor a 900px */
+@media (min-width: 900px) {
+
+    .nav__list {
+        transform: translate(0);
+        position: static;
+        grid-auto-flow: column;
+        gap: 1rem;
+        background-color: transparent;
+    }
+
+    .btn__open {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .services__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
