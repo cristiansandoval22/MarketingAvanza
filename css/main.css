@@ -294,7 +294,8 @@ img {
 .cta__figure {
     display: none;
 }
-.cta__img{
+
+.cta__img {
     width: 80%;
     margin: 0 auto;
 }
@@ -302,17 +303,26 @@ img {
 /*=============== END CTA ===============*/
 
 /*=============== FAQ ===============*/
-.faq__container{
+.faq__container {
     margin: 1rem 0;
 }
-.faq__list{
+
+.faq__list {
     display: grid;
     gap: 1.5rem;
 }
 
-.faq__title {
+.faq__item {
+    padding: 0.5rem 0 0 0;
+    border-radius: 1rem;
     background-color: var(--primary-200);
+    border: 1px solid black;
+    border-bottom-width: 3px;
+}
+
+.faq__title {
     padding: 0.5rem;
+    font-size: 1.2rem;
     color: var(--text-100);
     border-radius: 0.5rem 0.5rem 0 0;
 }
@@ -326,29 +336,174 @@ img {
 }
 
 .faq__content {
+    background-color: var(--text-100);
     display: none;
-    transition: all 0.4 ease-in-out;
     padding: 1rem 0.5rem;
     border: 1px solid black;
-    transition: all 0.4s ease-in-out;
     border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .show__faq {
-    display: block;  
+    display: block;
 }
 
 /*=============== END FAQ ===============*/
+
+
+/*=============== CONTACT ===============*/
+.contact {
+    padding: 5rem 0;
+}
+
+.contact__content {
+    margin-top: 3rem;
+
+    background-color: var(--text-300);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.contact__figure {
+    display: none;
+}
+
+.contact__form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact__label {
+    display: grid;
+    gap: 0.3rem;
+}
+
+.contact__input,
+.contact__area {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--background-100);
+    background-color: var(--text-100);
+}
+
+.contact__area {
+    height: 120px;
+    resize: none;
+}
+
+.contact__submit {
+    background-color: var(--primary-300);
+    color: var(--text-100);
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+.contact__submit:hover {
+    background-color: var(--primary-100);
+}
+
+/*=============== END CONTACT ===============*/
+
+
+/*=============== FOOTER ===============*/
+.footer {
+    background-color: var(--background-200);
+}
+
+.footer__content {
+    color: var(--text-100);
+    padding: 5rem 0;
+    width: min(90%, 1200px);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.footer__main {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.footer__loogo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.footer__item {
+    margin-block: 1rem;
+}
+
+.footer__contact {
+    display: grid;
+    gap: 1rem;
+}
+
+.footer__copy {
+    background-color: var(--primary-300);
+    justify-self: start;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.footer__newsletter {
+    background-color: var(--primary-100);
+    padding: 1rem;
+    border-radius: 10px;
+    display: grid;
+    gap: 1rem;
+}
+
+.footer__email {
+    width: 100%;
+    border: 1px solid var(--text-100);
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.footer__email::placeholder {
+    color: white;
+}
+
+.form__submit {
+    width: 100%;
+    background-color: var(--primary-300);
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer__social-link {
+    --size: 40px;
+    background-color: var(--text-300);
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.footer_copyright{
+    border-top: 1px solid var(--text-100);
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+.footer__copyright-text{text-align: center;}
+/*=============== END FOOTER ===============*/
+
+
+
+
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
 
-
-/* For medium devices */
-
-
-/* For large devices */
-/*=============== END BREAKPOINTS ===============*/
-/* mayor a 768px */
 @media (min-width: 768px) {
 
     /*=============== HERO ===============*/
@@ -359,9 +514,10 @@ img {
         justify-content: space-between;
         grid-auto-columns: 50% 45%;
         grid-template-areas:
-            "titulo img"
-            "parrafo img"
-            "link img";
+            "titulo titulo"
+            "parrafo parrafo"
+            "link link"
+            "img img";
     }
 
     .hero__title {
@@ -398,9 +554,7 @@ img {
 
 
     /*=============== CTA ===============*/
-    .cta{
-        padding: 0;
-    }
+
     .cta__content {
         grid-template-columns: 45% 45%;
         justify-content: space-between;
@@ -419,9 +573,34 @@ img {
 
     /*=============== END CTA ===============*/
 
+    /*=============== CONTACT ===============*/
+    .contact__content {
+        grid-template-columns: 50% 45%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact__figure {
+        display: block;
+    }
+
+    /*=============== END CONTACT ===============*/
+
+    /*=============== FOOTER ===============*/
+    .footer__newsletter{
+        height: max-content;
+    }
+    
+    .footer__main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer__social{
+        justify-content: start;
+    }   
+    /*=============== END FOOTER ===============*/
 }
 
-/* mayor a 900px */
 @media (min-width: 900px) {
 
     .nav__list {
@@ -440,7 +619,56 @@ img {
 
 @media (min-width: 1024px) {
 
+    /*=============== HERO ===============*/
+    .hero__main {
+        padding: 5rem 0;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        grid-auto-columns: 50% 45%;
+        grid-template-areas:
+            "titulo img"
+            "parrafo img"
+            "link img";
+    }
+
+    .hero__title {
+        grid-area: titulo;
+
+    }
+
+    .hero__paragraph {
+        grid-area: parrafo;
+
+    }
+
+    .hero__cta {
+        grid-area: link;
+        padding: 1rem 2rem;
+        place-self: start;
+    }
+
+    .hero__figure {
+        grid-area: img;
+    }
+
+    /*=============== END HERO ===============*/
+
+    /*=============== SERVICES ===============*/
     .services__container {
         grid-template-columns: repeat(3, 1fr);
     }
+    /*=============== END SERVICES===============*/
+
+
+    /*=============== FOOTER ===============*/
+    .footer__main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+   
+    /*=============== END FOOTER ===============*/
 }
+
+/*=============== END BREAKPOINTS ===============*/
