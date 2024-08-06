@@ -590,7 +590,7 @@ img {
     .footer__newsletter{
         height: max-content;
     }
-    
+
     .footer__main{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -667,7 +667,6 @@ img {
         grid-template-columns: repeat(3, 1fr);
     }
 
-   
     /*=============== END FOOTER ===============*/
 }
 
